@@ -200,7 +200,7 @@ img {
     padding-top: var(--nav-height);
 
     /* Placeholder photo background */
-    background-image: url("Images/general-img-square.png"); 
+    background-image: url("Images/Gym.jpg"); 
     background-size: cover;
     background-position: center;
 }
@@ -253,40 +253,41 @@ img {
     padding: 16px 40px;
     border-radius: 3px;
   
-  transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .try-free-pass:hover {
-  background-color: var(--red-hover);
-  transform: translateY(-2px);  /* subtle lift on hover */
+    background-color: var(--red-hover);
+    transform: translateY(-2px);  /* subtle lift on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1); 
 }
 
 /* =================== FEATURES HOME =================== */
 
 #features {
-  background-color: var(--dark);
-  padding: 80px 40px;
+    background-color: var(--dark);
+    padding: 80px 40px;
 }
 
 .section-title {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 3px;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  position: relative;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
 }
 
 /* Red underline decoration on section titles */
 .section-title::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: var(--red);
-  margin: 12px auto 0;
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--red);
+    margin: 12px auto 0;
 }
 
 /* CSS Grid: up to 3 columns, auto-fill handles any number of cards */
