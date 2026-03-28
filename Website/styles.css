@@ -192,11 +192,11 @@ img {
 /* =================== GREETER HOME =================== */
 
 #greeter {
-  position: relative;
-  min-height: 100vh;            /* full screen height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    min-height: 100vh;            /* full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding-top: var(--nav-height);
 
