@@ -201,7 +201,7 @@ img {
     padding-top: var(--nav-height);
 
     /* Placeholder photo background */
-    background-image: url("Images/GymBackdrop1.png"); 
+    background-image: url("ADDGYMHERE"); 
     background-size: cover;
     background-position: center;
 }
@@ -242,7 +242,6 @@ img {
     margin: 0 auto 36px;
 }
 
-/* Hero CTA button */
 .try-free-pass {
     display: inline-block;
     background-color: var(--red);
