@@ -562,6 +562,7 @@ input[type="checkbox"] {
 /* --- TEXT AREA --- */
 textarea {
   width: 100%;
+  resize: vertical;   /* only allow up/down resizing */
 }
 
 input[type="text"],
