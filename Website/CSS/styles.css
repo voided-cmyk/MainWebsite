@@ -158,13 +158,6 @@ img {
     transform: translateY(0);
 }
 
-/* Also show via .open class (added by jQuery for mobile) */
-.has-dropdown.open .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
 /* Dropdown items */
 .dropdown li a {
     display: block;
