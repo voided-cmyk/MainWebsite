@@ -1,14 +1,43 @@
 /* =================== TIMETABLES =================== */
 
+.welcome {
+    margin-top: var(--nav-height);
+    margin-bottom: 40px;
+    background-color: var(--black);
+    padding: 60px;
+    padding-top: var(--nav-height);
+    text-align: center;
+    border-bottom: 2px solid var(--red);
+}
+
+.welcome h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: var(--red);
+}
+
+.welcome p {
+    font-size: 1.1rem;
+    color: var(--light-grey);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 table {
-    border: 1px solid black;
+    border: 1px solid var(--black);
     border-collapse: collapse;
     margin: 0 auto;
     padding-top: var(--nav-height);
+    margin-bottom: 40px;
 }
 
 th, td {
-    border: 1px solid black;
+    border: 1px solid var(--white);
     padding: 8px;
     text-align: center;
 }

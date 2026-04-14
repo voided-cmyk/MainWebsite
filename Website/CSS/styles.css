@@ -6,15 +6,15 @@
     --mid-grey:   #2e2e2e;
     --light-grey: #aaaaaa;
     --white:      #ffffff;
-    --red:        #e31b1b;  
-    --dark-red:   #b81515;
-    --red-hover:  #b81515;
+    --red:        #e11111;  
+    --dark-red:   #911111;
+    --red-hover:  #b81111;
     --copyright-grey: #555555;
    
-    --font-heading: "Oswald", sans-serif;  /* brand font */
-    --font-body:    "Lato", sans-serif;  /* brand font */
+    --font-heading: "Oswald", sans-serif;  
+    --font-body:    "Lato", sans-serif;  
 
-    --nav-height: 70px; /* height of the navigation bar */
+    --nav-height: 70px; /* navigation bar height */
 }
 
 /* =================== BASE STYLE =================== */
