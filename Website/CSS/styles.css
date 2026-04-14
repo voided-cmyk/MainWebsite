@@ -1,0 +1,787 @@
+/* =================== CUSTOM CSS VARIABLES =================== */
+:root {
+    --black:      #0a0a0a;
+    --dark:       #111111;
+    --dark-grey:  #1c1c1c;
+    --mid-grey:   #2e2e2e;
+    --light-grey: #aaaaaa;
+    --white:      #ffffff;
+    --red:        #e31b1b;  
+    --dark-red:   #b81515;
+    --red-hover:  #b81515;
+    --copyright-grey: #555555;
+   
+    --font-heading: "Oswald", sans-serif;  /* brand font */
+    --font-body:    "Lato", sans-serif;  /* brand font */
+
+    --nav-height: 70px; /* height of the navigation bar */
+}
+
+/* =================== BASE STYLE =================== */
+
+* { 
+    box-sizing: border-box;   /* padding and border included in element widths, easier to work with */
+    margin: 0; 
+    padding: 0; 
+}
+
+html {
+    scroll-behavior: smooth;  /* smooth scrolling when following links */
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;    /* remove underline from links */
+    color: inherit;
+}
+
+ul {
+    list-style: none;         /* remove bullet points from all lists */
+}
+
+img {
+    max-width: 100%;          /* images never exceed their container */
+    display: block;
+}
+
+/* =================== NAVIGATION BAR =================== */
+#navigation-bar {
+    position: fixed;          /* stays at the top of screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;            /* sits on top of all other content */
+    border-bottom: 2px solid var(--red);
+}
+
+/* Logo */
+.navigation-logo a {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.navigation-logo span {
+    color: var(--red);        /* "Active" part of the logo colour */
+}
+
+#navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Navigation links within list items */
+#navigation-links > li > a {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: color 0.2s ease;  /* Smooth colour change on hover */
+    padding: 5px 0;
+}
+
+#navigation-links > li > a:hover,
+#navigation-links > li > a.active {
+    color: var(--red);
+}
+
+/* "JOIN NOW" button in navigation bar */
+.join-now {
+    background-color: var(--red);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* =================== HOVER AND EXTEND EFFECTS =================== */
+
+/* Apply red hover effect to join now button */
+.join-now:hover {
+    background-color: var(--red-hover);
+    transform: translateY(-2px);  /* subtle lift on hover */
+}
+
+/* Position dropdown below its parent */
+.has-dropdown { 
+    position: relative;
+}
+
+/* The dropdown list hidden by default */
+.dropdown {
+    position: absolute;       /* positions appear at parent <li> */
+    top: 100%;                /* directly below the parent link */
+    left: 0;
+    background-color: var(--dark-grey);
+    min-width: 200px;
+    border-top: 2px solid var(--red);
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 8px 20px var(--black);
+    padding: 8px 0;
+
+    /* Hidden */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);          /* slightly above final position */
+    transition: 
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Show dropdown when hovering over parent <li> */
+.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Also show via .open class (added by jQuery for mobile) */
+.has-dropdown.open .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
+.dropdown li a {
+    display: block;
+    padding: 10px 18px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown li a:hover {
+    background-color: var(--mid-grey);
+    color: var(--white);
+}
+
+/* =================== GREETER HOME =================== */
+
+#greeter {
+    position: relative;
+    min-height: 100vh;            /* full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: var(--nav-height);
+    text-shadow: 0 2px 10px var(--black);
+
+    background-size: cover;
+    background-position: center;
+}
+
+.greeter-content {
+    position: relative;           
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.greeter-tagline {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px var(--black);
+}
+
+.greeter-content h1 {
+    font-family: var(--font-heading);
+    font-size: 5.5rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.greeter-content h1 span{
+  color: var(--red);        /* Header span logo colour */
+}
+
+.greeter-sub {
+    font-size: 1.1rem;
+    color: var(--white);
+    max-width: 560px;
+    margin: 0 auto 36px;
+}
+
+.try-free-pass {
+    display: inline-block;
+    background-color: var(--red);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px var(--black);
+  
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.try-free-pass:hover {
+    background-color: var(--red-hover);
+    transform: translateY(-2px);  /* tiny lift on hover */
+}
+
+.indicator-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 1.5px solid var(--black);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.indicator.active {
+    background-color: var(--red-hover);
+    transform: translateY(-2px);
+}
+
+/* =================== FEATURES HOME =================== */
+
+#features {
+    background-color: var(--dark);
+    padding: 80px 40px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Red underline decoration on section titles */
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--red);
+    margin: 12px auto 0;
+}
+
+/* CSS Grid: up to 3 columns, auto-fill handles any number of cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--dark-grey);
+    border-radius: 6px;
+    padding: 15px 15px;
+    border: 2px solid transparent; /* reserves space so text doesnt move */
+    border-top: 2px solid var(--red);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 1s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px var(--dark-red);
+    border: 2px solid var(--red);
+}
+
+.feature-img {
+    width: 100%;
+    height: 180px; 
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.feature-card:hover img {
+    transition: transform 1s ease-in-out;
+    transform: scale(1.10); /* zooms in slightly on hover */
+}
+
+.feature-card h3 {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--light-grey);
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* =================== HOME LOCATIONS =================== */
+
+#locations {
+    background-color: var(--black);
+    padding: 80px 60px;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 1 column on small screens, up to 3 on large */
+    gap: 140px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.location-card {
+    border: 1px solid var(--mid-grey); 
+    border-radius: 6px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: border-color 1s ease, transform 1s ease, box-shadow 1s ease;
+}
+
+.location-card:hover {
+    border-color: var(--red);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px var(--dark-red);
+}
+
+.location-map {
+    width: 100%;
+    height: 200px; 
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+
+.location-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+    color: var(--red);
+}
+
+.location-card .location-cords {
+    font-size: 0.8rem;
+    color: var(--white);
+    display: block; 
+    margin-bottom: 10px;
+}
+
+.location-card p {
+    color: var(--light-grey);
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+/* =================== ACTION BANNER =================== */
+
+#action-banner {
+    background-color: var(--red);
+    text-align: center;
+    padding: 70px 40px;
+}
+
+#action-banner h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+#action-banner p {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Override background inside red banner */
+#action-banner a {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border-radius: 3px;
+  
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#action-banner a:hover {
+    background-color: var(--mid-grey);
+    transform: translateY(-2px);  /* subtle lift on hover */
+    box-shadow: 0 5px 10px var(--black)
+}
+
+/* I wrote this a little different to the rest of the code because there would only be ONE of these sections needed
+in a future scenario, it just goes above the footer as a final inticing call to action. */
+
+/* =================== GENERAL FORM CSS =================== */
+/* radio-group, checkbox-group, text-group, textarea */
+
+/* --- BANNER --- */
+.form-banner {
+    background-color: var(--dark-grey);
+    text-align: center;
+    padding: 100px 40px 60px;
+    border-bottom: 2px solid var(--red);
+}
+
+.form-banner h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 14px;
+}
+
+.form-banner p {
+    font-size: 1rem;
+    color: var(--light-grey);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- GENERAL FORM CSS --- */
+#form-section {
+    background-color: var(--dark);
+    padding: 60px 40px 60px;
+}
+
+fieldset {
+    border: 1px solid var(--mid-grey);
+    border-radius: 6px;
+    padding: 28px;
+}
+
+legend {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 0 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sub-heading {
+    font-size: 0.85rem;
+    color: var(--light-grey);
+    margin-bottom: 12px;
+}
+
+.required {
+  color: var(--red);
+}
+
+.error-msg {
+    display: none;                
+    font-size: 0.82rem;
+    color: var(--red);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.error-msg.show {
+    display: block;
+}
+
+/* --- GENERAL FORM --- */
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.text-group:last-child {
+    margin-bottom: 0;
+}
+
+/* --- RADIO BUTTONS --- */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--light-grey);
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.radio-label:hover {
+    color: var(--white);
+}
+
+.radio-group:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- CHECKBOXES ---- */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--light-grey);
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.checkbox-label:hover {
+    color: var(--white);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--red);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* --- TEXT AREA --- */
+textarea {
+  width: 100%;
+  resize: vertical;   /* only allow up/down resizing */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    background-color: var(--mid-grey);
+    border: 1px solid #444;
+    border-radius: 4px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+    color: #666;
+}
+
+/* Highlight border on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: var(--red);
+}
+
+/* --- INPUT INVALID --- */
+input.invalid,
+textarea.invalid {
+    border-color: var(--red);
+    background-color: rgba(227, 27, 27, 0.08);
+}
+
+/* Custom look for radio buttons */
+input[type="radio"] {
+    accent-color: var(--red);     
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* --- ERROR MESSAGES --- */
+.error-msg {
+    display: none;                /* hidden */
+    font-size: 0.82rem;
+    color: var(--red);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* When jQuery adds class .show, the error becomes visible */
+.error-msg.show {
+    display: block;
+}
+
+/* ---- SUBMIT BUTTON ---- */
+.form-submit {
+    text-align: center;
+}
+
+#submit-btn {
+    background-color: var(--red);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 50px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#submit-btn:hover {
+    background-color: var(--red-hover);
+    transform: translateY(-2px);
+}
+
+#submit-btn:active {
+    transform: translateY(0);
+}
+
+/* ---- SUCESS  ---- */
+#success-msg {
+    display: none;                /* hidden until valid by JQuery */
+    background-color: #193a19;
+    border: 1px solid #308834;
+    border-radius: 6px;
+    color: #79b87c;
+    text-align: center;
+    padding: 25px;
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+/* =================== CONTACT FORM SPECIFIC =================== */
+
+#contact-form {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;                    /* space between each <fieldset> */
+}
+
+/* =================== MEMBERSHIP FORM SPECIFIC =================== */
+
+#membership-form {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;                    /* space between each <fieldset> */
+}
+
+/* =================== FOOTER =================== */
+
+#footer {
+    background-color: var(--dark-grey);
+    border-top: 2px solid var(--red);
+    padding: 40px 40px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--red);
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    font-size: 0.85rem;
+    color: var(--light-grey);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+    color: var(--red);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: var(--copyright-grey)
+}
