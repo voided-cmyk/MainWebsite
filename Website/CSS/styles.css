@@ -415,6 +415,14 @@ label {
     margin-bottom: 12px;
 }
 
+.contact-details {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
 /* === INPUT TEXT === */
 .text-group {
     display: flex;
