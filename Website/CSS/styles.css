@@ -113,6 +113,7 @@ img {
 
 #navigation-bar {
     position: fixed; /* consistent at top of screen */
+    flex-wrap: wrap; /* allows nav to wrap on smaller screens */
     width: 100%;
     height: var(--nav-height);
     background-color: var(--black);
@@ -122,6 +123,12 @@ img {
     padding: 0 40px;
     z-index: 1000; /* appear above all other content */
     border-bottom: 2px solid var(--red);
+}
+
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+  }
 }
 
 .navigation-logo a {
