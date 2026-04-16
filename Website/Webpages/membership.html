@@ -29,6 +29,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Javascript Source -->
+    <script src="../JavaScript/searchbar.js"></script>
+
+    <!-- Javascript Source -->
     <script src="../JavaScript/checkMembership.js"></script>
 </head>
 
@@ -74,8 +77,14 @@
 
         </ul>
 
-        <!-- Membership Form -->
-        <a href="membership.html" class="join-now">JOIN NOW</a>
+        <!-- Search and Join Now -->
+        <div class="nav-actions">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search pages...">
+                <ul id="autocomplete-list" class="autocomplete-list"></ul>
+            </div>
+            <a href="membership.html" class="join-now">JOIN NOW</a>
+        </div>
 
     </nav>
 

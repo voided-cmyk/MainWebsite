@@ -32,6 +32,7 @@
 
     <!-- Javascript Source -->
     <script src="JavaScript/homePageScripts.js"></script>
+    <script src="JavaScript/searchbar.js"></script>
 </head>
 
 <body>
@@ -76,8 +77,14 @@
 
         </ul>
 
-        <!-- Membership Form -->
-        <a href="Webpages/membership.html" class="join-now">JOIN NOW</a>
+        <!-- Search and Join Now -->
+        <div class="nav-actions">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search pages...">
+                <ul id="autocomplete-list" class="autocomplete-list"></ul>
+            </div>
+            <a href="Webpages/membership.html" class="join-now">JOIN NOW</a>
+        </div>
 
     </nav>
 

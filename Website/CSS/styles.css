@@ -139,8 +139,31 @@ img {
 #navigation-links {
     display: flex; 
     align-items: center;
-    gap: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
+#navigation-links > li {
+    position: relative;
+    margin-right: 30px;
+}
+
+#navigation-links > li:last-child {
+    margin-right: 0;
+}
+
+#navigation-links > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background-color: var(--light-grey);
+}
+
 /* Main navigation link styles */
 #navigation-links > li > a {
     font-family: var(--font-heading);
@@ -173,6 +196,78 @@ img {
 .join-now:hover {
     background-color: var(--red-hover);
     transform: translateY(-2px);  /* subtle lift on hover */
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-container {
+    position: relative;
+}
+
+#search-input {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    border: 1px solid var(--light-grey);
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    width: 200px;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--red);
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--dark-grey);
+    border: 1px solid var(--light-grey);
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0px;
+    display: none;
+}
+
+.autocomplete-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--mid-grey);
+    line-height: 1.4;
+}
+
+.autocomplete-list li strong {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.autocomplete-list li small {
+    color: var(--light-grey);
+    font-size: 0.8rem;
+}
+
+.autocomplete-list li em {
+    color: var(--white);
+    font-style: normal;
+    font-size: 0.85rem;
+}
+
+.autocomplete-list li:hover {
+    background-color: var(--mid-grey);
+}
+
+.autocomplete-list li:last-child {
+    border-bottom: none;
 }
 
 .has-dropdown { 
