@@ -36,6 +36,7 @@ $(document).ready(function() {
         }
 
         if (formIsValid) {
+            // week 9 slides on fade in & out
             $(this).find("fieldset, .form-submit").fadeOut(300, function() {
                 $("#success-msg").fadeIn(400);
             });

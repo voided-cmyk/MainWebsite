@@ -266,7 +266,7 @@ img {
 
 .footer-copyright {
     font-size: 0.8rem;
-    color: var(--copyright-grey)
+    color: var(--copyright-grey);
 }
 
 /* 
@@ -346,7 +346,7 @@ img {
 #action-banner a:hover {
     background-color: var(--mid-grey);
     transform: translateY(-2px);  /* subtle lift on hover */
-    box-shadow: 0 5px 10px var(--black)
+    box-shadow: 0 5px 10px var(--black);
 }
 
 /* 
@@ -438,20 +438,6 @@ label {
     margin-top: 14px;
 }
 
-.radio-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-    color: var(--light-grey);
-    cursor: pointer;
-    transition: color 0.15s ease;
-}
-
-.radio-label:hover {
-    color: var(--white);
-}
-
 /* === CHECKBOXES === */
 .checkbox-group {
     display: flex;
@@ -460,6 +446,7 @@ label {
     margin-top: 8px;
 }
 
+.radio-label,
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -470,6 +457,7 @@ label {
     transition: color 0.15s ease;
 }
 
+.radio-label:hover,
 .checkbox-label:hover {
     color: var(--white);
 }
@@ -577,18 +565,6 @@ input[type="radio"] {
 /* === VALIDATION === */
 .required {
   color: var(--red);
-}
-
-.error-msg {
-    display: none;                
-    font-size: 0.80rem;
-    color: var(--red);
-    font-style: var(--font-body);
-    margin-top: 2px;
-}
-
-.error-msg.show {
-    display: block;
 }
 /* === SUCCESS  === */
 #success-msg {
@@ -728,9 +704,9 @@ input[type="radio"] {
     background-color: var(--dark-grey);
     border-radius: 10px;
     padding: 15px 15px;
-    border: 2px solid transparent; /* reserves space so text doesnt move on animation */
+    border: 2px solid transparent;
     border-top: 2px solid var(--red);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 1s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .feature-card:hover {
@@ -790,7 +766,7 @@ input[type="radio"] {
     border-radius: 6px;
     padding: 36px 28px;
     text-align: center;
-    transition: border-color 1s ease, transform 1s ease, box-shadow 1s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .location-card:hover {
@@ -833,11 +809,7 @@ input[type="radio"] {
 ====================================================================================================================
 */
 
-#history {
-    background-color: var(--black);
-    padding: 40px 20px 20px 20px;
-}
-
+#history,
 #our-motto {
     background-color: var(--black);
     padding: 40px 20px 20px 20px;
@@ -855,14 +827,14 @@ input[type="radio"] {
     border-radius: 10px;
     padding: 25px 25px;
     margin-bottom: 40px;
-    border: 2px solid var(--red);; /* reserves space so text doesnt move on animation */
+    border: 2px solid var(--red);
 
     display: flex;
     align-items: center; 
     justify-content: space-between;
     gap: 20px; 
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .about-card:hover {
@@ -974,7 +946,7 @@ input[type="radio"] {
     border-radius: 10px;
     padding: 25px 25px;
     margin-bottom: 40px;
-    border: 2px solid var(--red);; /* reserves space so text doesnt move on animation */
+    border: 2px solid var(--red);
 
     display: flex;
     flex-direction: column;
@@ -982,7 +954,7 @@ input[type="radio"] {
     justify-content: center;
     gap: 20px; 
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .facility-card:hover {
