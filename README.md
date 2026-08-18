@@ -47,12 +47,3 @@ Built With
 
     Draw.io - Wireframing and design
 
-Team Members
-
-    Daniel
-
-    Riley
-
-    Cian
-
-    Odhrán
